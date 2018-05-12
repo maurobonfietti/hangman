@@ -61,7 +61,7 @@ export class AppComponent {
     }
 
     comprobar(letra) {
-        document.getElementById(letra).disabled = true;
+        document.getElementById('btn-'+letra).disabled = true;
         if (this.palabra.indexOf(letra) === -1) {
             this.intentos++;
         }
