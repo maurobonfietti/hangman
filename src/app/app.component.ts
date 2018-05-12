@@ -7,16 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-    palabra = 'AGUA';
+    palabra = '';
     palabraOculta = '';
     intentos = 0;
     gano = false;
     perdio = false;
 
     letras = [
-        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
-        'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S',
-        'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
     ];
 
     palabrasArray = [
@@ -35,7 +34,9 @@ export class AppComponent {
     }
 
     comprobar(letra) {
-        this.existeLetra(letra);
+        if (this.palabra.indexOf(letra) === -1) {
+            this.intentos++;
+        }
         const palabraOcultaArr = this.palabraOculta.split(' ');
         for (let i = 0; i < this.palabra.length; i++) {
             if (this.palabra[i] === letra) {
@@ -52,17 +53,8 @@ export class AppComponent {
         if (palabraEvaluar === this.palabra) {
             this.gano = true;
         }
-        
         if (this.intentos >= 9) {
             this.perdio = true;
-        }
-    }
-
-    existeLetra(letra) {
-        if (this.palabra.indexOf(letra) >= 0) {
-//            console.log('Letra Existe: ' + letra);
-        } else {
-            this.intentos++;
         }
     }
 }
