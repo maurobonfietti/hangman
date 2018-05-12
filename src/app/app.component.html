@@ -27,7 +27,7 @@
 
 <div class="row" *ngIf="!gano && !perdio">
     <div class="col text-center">
-        <button class="btn btn-primary" (click)="comprobar(letra)" *ngFor="let letra of letras">
+        <button class="btn btn-primary" id="{{letra}}" (click)="comprobar(letra)" *ngFor="let letra of letras">
             {{letra}}
         </button>
     </div>
