@@ -19,11 +19,21 @@ export class AppComponent {
     ];
 
     palabrasArray = [
-        'GAME',
+        'JUEGO',
         'SALAME',
         'VENTILADOR',
         'CALEFACTOR',
         'CUNA',
+        'SIMPATIA',
+        'PESADO',
+        'JOROBADO',
+        'COMILLAS',
+        'PILA',
+        'AZOTEA',
+        'BURBUJA',
+        'SORTEO',
+        'TRUCO',
+        'ANTIBIOTICOS',
     ];
 
     constructor() {
