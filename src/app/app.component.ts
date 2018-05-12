@@ -29,10 +29,8 @@ export class AppComponent {
 
     constructor() {
         console.log('Cargando AppComponent...');
-
         var randomNumber = Math.floor(Math.random() * this.palabrasArray.length);
         this.palabra = this.palabrasArray[randomNumber];
-
         this.palabraOculta = '_ '.repeat(this.palabra.length);
     }
 
@@ -49,26 +47,21 @@ export class AppComponent {
     }
 
     verificaGane() {
-//        console.log(this.palabraOculta);
         const palabraArr = this.palabraOculta.split(' ');
         const palabraEvaluar = palabraArr.join('');
         if (palabraEvaluar === this.palabra) {
             this.gano = true;
-            console.log('Usuario Gano!!');
         }
         
         if (this.intentos >= 9) {
             this.perdio = true;
-            console.log('Usuario Perdio!!');
         }
-        console.log(palabraEvaluar);
     }
 
     existeLetra(letra) {
         if (this.palabra.indexOf(letra) >= 0) {
 //            console.log('Letra Existe: ' + letra);
         } else {
-//            console.log('Letra NO Existe: ' + letra);
             this.intentos++;
         }
     }
