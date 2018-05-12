@@ -19,8 +19,20 @@ export class AppComponent {
         'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
     ];
 
+    palabrasArray = [
+        'GAME',
+        'SALAME',
+        'VENTILADOR',
+        'CALEFACTOR',
+        'CUNA',
+    ];
+
     constructor() {
         console.log('Cargando AppComponent...');
+
+        var randomNumber = Math.floor(Math.random() * this.palabrasArray.length);
+        this.palabra = this.palabrasArray[randomNumber];
+
         this.palabraOculta = '_ '.repeat(this.palabra.length);
     }
 
