@@ -7,18 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-    palabra = '';
-    palabraOculta = '';
-    intentos = 0;
-    gano = false;
-    perdio = false;
+    word = '';
+    hiddenWord = '';
+    tries = 0;
+    win = false;
+    lost = false;
 
-    letras = [
+    letters = [
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
         'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
     ];
 
-    palabrasArray = [
+    words = [
         'JUEGO',
         'SALAME',
         'VENTILADOR',
@@ -54,35 +54,34 @@ export class AppComponent {
     ];
 
     constructor() {
-        console.log('Cargando AppComponent...');
-        var randomNumber = Math.floor(Math.random() * this.palabrasArray.length);
-        this.palabra = this.palabrasArray[randomNumber];
-        this.palabraOculta = '_ '.repeat(this.palabra.length);
+        var randomNumber = Math.floor(Math.random() * this.words.length);
+        this.word = this.words[randomNumber];
+        this.hiddenWord = '_ '.repeat(this.word.length);
     }
 
-    comprobar(letra) {
-        document.getElementById('btn-'+letra).disabled = true;
-        if (this.palabra.indexOf(letra) === -1) {
-            this.intentos++;
+    check(letter) {
+        (<HTMLInputElement> document.getElementById('btn-'+letter)).disabled = true;
+        if (this.word.indexOf(letter) === -1) {
+            this.tries++;
         }
-        const palabraOcultaArr = this.palabraOculta.split(' ');
-        for (let i = 0; i < this.palabra.length; i++) {
-            if (this.palabra[i] === letra) {
-                palabraOcultaArr[i] = letra;
+        const hiddenWordArray = this.hiddenWord.split(' ');
+        for (let i = 0; i < this.word.length; i++) {
+            if (this.word[i] === letter) {
+                hiddenWordArray[i] = letter;
             }
         }
-        this.palabraOculta = palabraOcultaArr.join(' ');
-        this.verificaGane();
+        this.hiddenWord = hiddenWordArray.join(' ');
+        this.checkGame();
     }
 
-    verificaGane() {
-        const palabraArr = this.palabraOculta.split(' ');
-        const palabraEvaluar = palabraArr.join('');
-        if (palabraEvaluar === this.palabra) {
-            this.gano = true;
+    checkGame() {
+        const wordArray = this.hiddenWord.split(' ');
+        const wordCheck = wordArray.join('');
+        if (wordCheck === this.word) {
+            this.win = true;
         }
-        if (this.intentos >= 9) {
-            this.perdio = true;
+        if (this.tries >= 9) {
+            this.lost = true;
         }
     }
 }
