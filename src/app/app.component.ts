@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {words} from './words';
 
 @Component({
   selector: 'app-root',
@@ -18,82 +19,9 @@ export class AppComponent {
         'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
     ];
 
-    words = [
-        'JUEGO',
-        'SALAME',
-        'VENTILADOR',
-        'CALEFACTOR',
-        'CUNA',
-        'SIMPATIA',
-        'PESADO',
-        'JOROBADO',
-        'COMILLAS',
-        'PILA',
-        'AZOTEA',
-        'BURBUJA',
-        'SORTEO',
-        'TRUCO',
-        'ANTIBIOTICO',
-        'REVOLUCIONARIO',
-        'OLER',
-        'ASEGURAR',
-        'REBELDE',
-        'AVANZADO',
-        'ANUNCIO',
-        'MENTIRA',
-        'MARIPOSA',
-        'LEER',
-        'REALIZAR',
-        'FRONTERA',
-        'PURO',
-        'TECHO',
-        'DULCE',
-        'VENDAJE',
-        'HIELO',
-        'COMPONER',
-        'DULCE',
-        'COMBINAR',
-        'DISCRIMINAR',
-        'MITO',
-        'ANSIEDAD',
-        'JUICIO',
-        'ANILLO',
-        'GRIFO',
-        'COLLAR',
-        'MANERA',
-        'GIGANTE',
-        'MEDIEVAL',
-        'SALUDAR',
-        'CARGA',
-        'OTRO',
-        'COMPARTIR',
-        'RESPONDER',
-        'CHAQUETA',
-        'ARCO',
-        'DUQUE',
-        'CAMA',
-        'EXTERIOR',
-        'RESTAURANTE',
-        'EXTORSIONAR',
-        'REALIZAR',
-        'DEFINIR',
-        'SOBRAS',
-        'NOTORIO',
-        'REMEDIO',
-        'DECISIVO',
-        'CABALLO',
-        'MEJILLA',
-        'REEMBOLSO',
-        'ARREGLO',
-        'DETENER',
-        'PILA',
-        'DIALECTO',
-        'PINTAR',
-    ];
-
     constructor() {
-        var randomNumber = Math.floor(Math.random() * this.words.length);
-        this.word = this.words[randomNumber];
+        var randomNumber = Math.floor(Math.random() * words.words.length);
+        this.word = words.words[randomNumber];
         this.hiddenWord = '_ '.repeat(this.word.length);
     }
 
