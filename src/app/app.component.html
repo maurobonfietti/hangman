@@ -1,8 +1,8 @@
 <header class="bg-primary text-white">
   <div class="container text-center">
     <br>
-    <h1>EL JUEGO DEL AHORCADO</h1>
-    <p class="lead">ADIVINA LA PALABRA</p>
+    <h1>JUEGO DEL AHORCADO</h1>
+    <p class="lead">EL DESAFIO ES ADIVINAR LA PALABRA :-)</p>
     <br>
   </div>
 </header>
@@ -26,7 +26,7 @@
         <h1>GANASTE!!!</h1>
         <h4>FELICITACIONES</h4>
         <br>
-        <button class="btn btn-primary" (click)="reload()">JUGAR DE NUEVO</button>
+        <!--<button class="btn btn-primary" (click)="reload()">JUGAR DE NUEVO</button>-->
     </div>
 </div>
 
@@ -35,14 +35,12 @@
         <h1>PERDISTE!!!</h1>
         <h4>LA PALABRA ERA: {{word}}</h4>
         <br>
-        <button class="btn btn-primary" (click)="reload()">JUGAR DE NUEVO</button>
+        <!--<button class="btn btn-primary" (click)="reload()">JUGAR DE NUEVO</button>-->
     </div>
 </div>
 
 <div class="row" *ngIf="!win && !lost">
-    <div class="col-lg-4">
-        <br>
-    </div>
+    <div class="col-lg-4"><br></div>
     <div class="col-lg-4">
         <div class="col text-center">
             <button class="btn btn-primary" id="btn-{{letter}}" (click)="check(letter)" *ngFor="let letter of letters">
@@ -50,7 +48,5 @@
             </button>
         </div>
     </div>
-    <div class="col-lg-4">
-        <br>
-    </div>
+    <div class="col-lg-4"><br></div>
 </div>

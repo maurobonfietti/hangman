@@ -51,7 +51,7 @@ export class AppComponent {
         }
     }
 
-    reload() {
-        window.location = window.location.href;
-    }
+//    reload() {
+//        window.location = window.location.href;
+//    }
 }
