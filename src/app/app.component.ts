@@ -50,4 +50,8 @@ export class AppComponent {
             this.lost = true;
         }
     }
+
+    reload() {
+        window.location = window.location.href;
+    }
 }

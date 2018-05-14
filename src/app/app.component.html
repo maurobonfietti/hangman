@@ -1,13 +1,22 @@
+<header class="bg-primary text-white">
+  <div class="container text-center">
+    <br>
+    <h1>ADIVINA LA PALABRA</h1>
+    <br>
+  </div>
+</header>
+
 <div class="row">
     <div class="col text-center">
-        <img src="assets/img/{{tries}}.png" class="ahorcado-img">
+        <br>
+        <h1>{{hiddenWord}}</h1>
         <h3>Intentos <small>{{tries}}/9</small></h3>
     </div>
 </div>
 
 <div class="row">
     <div class="col text-center">
-        <h1>{{hiddenWord}}</h1>
+        <img src="assets/img/{{tries}}.png" class="ahorcado-img">
     </div>
 </div>
 
@@ -15,6 +24,8 @@
     <div class="col text-center">
         <h1>GANASTE!!!</h1>
         <h4>FELICITACIONES</h4>
+        <br>
+        <button class="btn btn-primary" (click)="reload()">JUGAR DE NUEVO</button>
     </div>
 </div>
 
@@ -22,13 +33,23 @@
     <div class="col text-center">
         <h1>PERDISTE!!!</h1>
         <h4>LA PALABRA ERA: {{word}}</h4>
+        <br>
+        <button class="btn btn-primary" (click)="reload()">JUGAR DE NUEVO</button>
     </div>
 </div>
 
 <div class="row" *ngIf="!win && !lost">
-    <div class="col text-center">
-        <button class="btn btn-primary" id="btn-{{letter}}" (click)="check(letter)" *ngFor="let letter of letters">
-            {{letter}}
-        </button>
+    <div class="col-lg-4">
+        <br>
+    </div>
+    <div class="col-lg-4">
+        <div class="col text-center">
+            <button class="btn btn-primary" id="btn-{{letter}}" (click)="check(letter)" *ngFor="let letter of letters">
+                {{letter}}
+            </button>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <br>
     </div>
 </div>
