@@ -23,8 +23,8 @@
 
 <div class="row" *ngIf="win">
     <div class="col text-center">
-        <h1>GANASTE!!!</h1>
-        <h4>FELICITACIONES</h4>
+        <h1 class="win">GANASTE!!!</h1>
+        <h4 class="win">FELICITACIONES</h4>
         <br>
         <button class="btn btn-primary" (click)="reload()">JUGAR DE NUEVO</button>
     </div>
@@ -32,8 +32,8 @@
 
 <div class="row" *ngIf="lost">
     <div class="col text-center">
-        <h1>PERDISTE!!!</h1>
-        <h4>LA PALABRA ERA: {{word}}</h4>
+        <h1 class="lost">PERDISTE!!!</h1>
+        <h4 class="lost">LA PALABRA ERA: {{word}}</h4>
         <br>
         <button class="btn btn-primary" (click)="reload()">JUGAR DE NUEVO</button>
     </div>
