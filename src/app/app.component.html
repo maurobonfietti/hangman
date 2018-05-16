@@ -10,6 +10,7 @@
 <div class="row">
     <div class="col text-center">
         <br>
+        <input (keyup)="onKey($event)">
         <h1>{{hiddenWord}}</h1>
         <h3>INTENTOS <small>{{tries}}/9</small></h3>
     </div>

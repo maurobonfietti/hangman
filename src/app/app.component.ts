@@ -26,6 +26,12 @@ export class AppComponent {
     }
 
     check(letter) {
+        if ((<HTMLInputElement> document.getElementById('btn-'+letter)) === null) {
+            return true;
+        }
+        if ((<HTMLInputElement> document.getElementById('btn-'+letter)).disabled === true) {
+            return true;
+        }
         (<HTMLInputElement> document.getElementById('btn-'+letter)).disabled = true;
         if (this.word.indexOf(letter) === -1) {
             this.tries++;
@@ -53,5 +59,9 @@ export class AppComponent {
 
     reload() {
         location.reload();
+    }
+
+    onKey(event: KeyboardEvent) {
+      this.check(event.key.toUpperCase());
     }
 }
