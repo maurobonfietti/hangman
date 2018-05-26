@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {words} from './words';
+import { words } from './words';
 
 @Component({
   selector: 'app-root',
@@ -20,12 +20,12 @@ export class AppComponent {
     ];
 
     constructor() {
-        var randomNumber = Math.floor(Math.random() * words.words.length);
-        this.word = words.words[randomNumber];
+        var randomNumber = Math.floor(Math.random() * words.length);
+        this.word = words[randomNumber];
         this.hiddenWord = '_ '.repeat(this.word.length);
     }
 
-    check(letter) {
+    check(letter:string) {
         if ((<HTMLInputElement> document.getElementById('btn-'+letter)) === null) {
             return true;
         }
