@@ -1,6 +1,4 @@
-
-export { words };
-
+export {words};
 const words = [
     'ABOGADO',
     'ADMITIR',

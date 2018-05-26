@@ -5,8 +5,7 @@ import {words} from './words';
     selector: 'game',
     templateUrl: './game.component.html'
 })
-export class GameComponent
-{
+export class GameComponent {
     word = '';
     hiddenWord = '';
     tries = 0;
