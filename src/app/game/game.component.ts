@@ -65,14 +65,14 @@ export class GameComponent {
         this.check(event.key.toUpperCase());
     }
 
-    playYouWinSound(){
+    playYouWinSound() {
         let audio = new Audio();
         audio.src = "../../assets/sound/youwin.mp3";
         audio.load();
         audio.play();
     }
 
-    playYouLoseSound(){
+    playYouLoseSound() {
         let audio = new Audio();
         audio.src = "../../assets/sound/youlose.mp3";
         audio.load();
