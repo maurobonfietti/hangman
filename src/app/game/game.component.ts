@@ -49,9 +49,11 @@ export class GameComponent {
         const wordCheck = wordArray.join('');
         if (wordCheck === this.word) {
             this.win = true;
+            this.playYouWinSound();
         }
         if (this.tries >= 9) {
             this.lost = true;
+            this.playYouLoseSound();
         }
     }
 
@@ -61,5 +63,19 @@ export class GameComponent {
 
     onKey(event: KeyboardEvent) {
         this.check(event.key.toUpperCase());
+    }
+
+    playYouWinSound(){
+        let audio = new Audio();
+        audio.src = "../../assets/sound/youwin.mp3";
+        audio.load();
+        audio.play();
+    }
+
+    playYouLoseSound(){
+        let audio = new Audio();
+        audio.src = "../../assets/sound/youlose.mp3";
+        audio.load();
+        audio.play();
     }
 }
