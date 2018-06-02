@@ -1,6 +1,6 @@
 
 .ahorcado-img {
-    height: 250px;
+    height: 200px;
 }
 
 button {
@@ -14,4 +14,8 @@ button {
 
 .lost {
     color: #e20f15;
+}
+
+header {
+    padding: 10px;
 }
