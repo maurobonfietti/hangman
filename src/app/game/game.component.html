@@ -1,7 +1,7 @@
 <header class="bg-primary text-white">
     <div class="container text-center">
         <h1>JUEGO DEL AHORCADO</h1>
-        <p class="lead">EL DESAFIO ES ADIVINAR LA PALABRA :-)</p>
+        <p class="lead">EL DESAFÍO ES ADIVINAR LA PALABRA ;-)</p>
     </div>
 </header>
 
@@ -16,7 +16,7 @@
 
 <div class="row">
     <div class="col text-center">
-        <img src="assets/img/{{tries}}.png" class="ahorcado-img">
+        <img src="assets/images/{{tries}}.png" class="ahorcado-img">
     </div>
 </div>
 
@@ -39,13 +39,11 @@
 </div>
 
 <div class="row" *ngIf="!win && !lost">
-    <div class="col-lg-4"><br></div>
-    <div class="col-lg-4">
+    <div class="container col-lg-6 text-center">
         <div class="col text-center">
             <button class="btn btn-primary" id="btn-{{letter}}" (click)="check(letter)" *ngFor="let letter of letters">
                 {{letter}}
             </button>
         </div>
     </div>
-    <div class="col-lg-4"><br></div>
 </div>

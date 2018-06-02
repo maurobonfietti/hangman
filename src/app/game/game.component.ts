@@ -66,14 +66,14 @@ export class GameComponent {
 
     playYouWinSound() {
         let audio = new Audio();
-        audio.src = "../../assets/sound/youwin.mp3";
+        audio.src = "../../assets/sounds/youwin.mp3";
         audio.load();
         audio.play();
     }
 
     playYouLoseSound() {
         let audio = new Audio();
-        audio.src = "../../assets/sound/youlose.mp3";
+        audio.src = "../../assets/sounds/youlose.mp3";
         audio.load();
         audio.play();
     }
